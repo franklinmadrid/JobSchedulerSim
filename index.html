@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Scheduler Simulator</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body style="margin-left: 20px">
+    <h3>Job Scheduler Simulator</h3>
+    <form>
+        <label>Select Schedule</label>
+        <select id="schedule">
+            <option>FCFS</option>
+            <option>SJN</option>
+            <option>SRT</option>
+            <option>Round Robin</option>
+        </select><br>
+        <input type="text" id="jobID" placeholder="Job Label" style="width: 100px" required>
+        <input type="number" id="jobArrival" placeholder="Job Arrival" style="width: 100px" required>
+        <input type="number" id="jobCycle" placeholder="Job Cycle" style="width: 100px" required>
+        <button type="submit" id="addBtn" style="margin-top: 10px">Add</button>
+    </form>
+    <button type="submit" id="runBtn" style="margin-top: 10px">Run</button><button type="submit" id="resetBtn" style="margin-left: 5px">Reset</button>
+    <p id="avgTurnaround" style="margin-top: 5px"> Average Turnaround: </p>
+    <p id="avgWaitTime"> Average Wait Time: </p>
+    <table id="resultTable" style="display:none">
+        <tbody>
+            <tr id="tr1">
+                <td>Job</td>
+            </tr>
+            <tr id="tr5">
+                <td>Arrival Time</td>
+            </tr>
+            <tr id="tr2">
+                <td>Completion</td>
+            </tr>
+            <tr id="tr3">
+                <td>Turnaround</td>
+            </tr>
+            <tr id="tr4">
+                <td>Wait Time</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="renderer.js"></script>
+</body>
+</html>
